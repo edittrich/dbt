@@ -1,1 +1,5 @@
-*dbt*
+= dbt
+
+== Links
+https://docs.getdbt.com/tutorial/setting-up/[Tutorial] +
+https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4[Introduction] +
