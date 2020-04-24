@@ -5,7 +5,24 @@ https://docs.getdbt.com/tutorial/setting-up/[Tutorial] +
 https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4[Introduction] +
 
 == Commands
- cd ~/Documents/workspaces/python/dbt/jaffle_shop
+
+ mkdir ~/Documents/workspaces/python/dbt
+ cd ~/Documents/workspaces/python/dbt
+ python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt <environment>
  source /home/edittrich/Documents/workspaces/python/venv/dbt/bin/activate
+ pip install dbt
+ pip freeze > requirements.txt
+
+ git clone git@github.com:edittrich/dbt.git
+ cd dbt
+ touch README.adoc
+ git add README.adoc
+ git commit -m "Initial"
+ git push -u origin master
+
+ dbt init jaffle-shop
+ cd jaffle_shop
  dbt debug
  dbt run
+ deactivate
+ 
