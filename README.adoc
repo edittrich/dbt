@@ -8,7 +8,7 @@ https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transf
 
  mkdir ~/Documents/workspaces/python/dbt
  cd ~/Documents/workspaces/python/dbt
- python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt <environment>
+ python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt dbt
  source /home/edittrich/Documents/workspaces/python/venv/dbt/bin/activate
  pip install dbt
  pip freeze > requirements.txt
@@ -25,4 +25,3 @@ https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transf
  dbt debug
  dbt run
  deactivate
- 
