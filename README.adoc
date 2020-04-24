@@ -3,3 +3,9 @@
 == Links
 https://docs.getdbt.com/tutorial/setting-up/[Tutorial] +
 https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4[Introduction] +
+
+== Commands
+cd ~/Documents/workspaces/python/dbt/jaffle_shop
+source /home/edittrich/Documents/workspaces/python/venv/dbt/bin/activate
+dbt debug
+dbt run
