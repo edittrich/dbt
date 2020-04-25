@@ -5,9 +5,7 @@ https://docs.getdbt.com/tutorial/setting-up/[Tutorial] +
 https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4[Introduction] +
 
 == Commands
-
- mkdir ~/Documents/workspaces/python/dbt
- cd ~/Documents/workspaces/python/dbt
+ cd ~/Documents/workspaces/python
  python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt dbt
  source /home/edittrich/Documents/workspaces/python/venv/dbt/bin/activate
  pip install dbt
@@ -21,6 +19,23 @@ https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transf
  git push -u origin master
 
  dbt init jaffle-shop
+cat > /home/edittrich/.dbt/profiles.yml << "EOF" 
+jaffle_shop: # Needs to match to the profile in the dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /home/edittrich/Documents/data/credentials/dbt-user@dev1-onb-playground-18fd.json # Replace with the full path to the keyfile
+      project: dev1-onb-playground-18fd # Replace with the GCP project id
+      dataset: dbt_spike # Replace with the BigQuery dataset 
+      threads: 1
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
+
+EOF
+  
  cd jaffle_shop
  dbt debug
  dbt run
