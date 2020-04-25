@@ -8,7 +8,7 @@ with customers as (
         id as customer_id,
         first_name,
         last_name
-    from `dev1-onb-playground-18fd`.dbt_spike.customers
+    from `dev1-onb-playground-18fd`.edittrich_dbt.src_customers
 ),
 orders as (
     select
@@ -16,7 +16,7 @@ orders as (
         user_id as customer_id,
         order_date,
         status
-    from `dev1-onb-playground-18fd`.dbt_spike.orders
+    from `dev1-onb-playground-18fd`.edittrich_dbt.src_orders
 ),
 customer_orders as (
     select
