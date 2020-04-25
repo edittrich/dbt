@@ -34,7 +34,7 @@ https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transf
        timeout_seconds: 300
        location: europe-west3
        priority: interactive
-
+ 
  EOF
   
  dbt debug
