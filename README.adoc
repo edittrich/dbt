@@ -4,6 +4,14 @@
 https://docs.getdbt.com/tutorial/setting-up/[Tutorial] +
 https://medium.com/the-telegraph-engineering/dbt-a-new-way-to-handle-data-transformation-at-the-telegraph-868ce3964eb4[Introduction] +
 
+== Security
+https://console.cloud.google.com/iam-admin/serviceaccounts?authuser=1[New service account] + 
+https://console.cloud.google.com/iam-admin/iam?authuser=1[Edit permissions of service accounts (and users in general)]
+
+https://docs.getdbt.com/docs/supported-databases/profile-bigquery/#required-permissions[Required permissions] + 
+* BigQuery Data Editor 
+* BigQuery User
+
 == Commands
  cd ~/Documents/workspaces/python
  python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt dbt
