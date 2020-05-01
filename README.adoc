@@ -14,29 +14,28 @@ https://docs.getdbt.com/docs/supported-databases/profile-bigquery/#required-perm
 * BigQuery User
 
 == Commands
- cd ~/Documents/workspaces/python
- python3 -m venv /home/edittrich/Documents/workspaces/python/venv/dbt --copies --prompt dbt
- source /home/edittrich/Documents/workspaces/python/venv/dbt/bin/activate
+ python3 -m venv ~/Documents/workspaces/python/venv/dbt --copies --prompt dbt
+ source ~/Documents/workspaces/python/venv/dbt/bin/activate
  pip install dbt
- pip freeze > requirements.txt
-
+ 
+ cd ~/Documents/workspaces/python
  git clone git@github.com:edittrich/dbt.git
  cd dbt
- touch README.adoc
- git add README.adoc
+ pip freeze > requirements.txt
+ git add requirements.txt
  git commit -m "Initial"
  git push -u origin master
 
  dbt init jaffle-shop
  cd jaffle_shop
- cat > /home/edittrich/.dbt/profiles.yml << "EOF" 
+ cat > ~/.dbt/profiles.yml << "EOF" 
  jaffle_shop: # Needs to match to the profile in the dbt_project.yml
    target: dev
    outputs:
      dev:
        type: bigquery
        method: service-account
-       keyfile: /home/edittrich/.ssh/dbt-user@dev1-onb-playground-18fd.json # Replace with the full path to the keyfile
+       keyfile: ~/.ssh/edittrich-dbt@dev1-onb-playground-18fd.json # Replace with the full path to the keyfile
        project: dev1-onb-playground-18fd # Replace with the GCP project id
        dataset: dbt_spike # Replace with the BigQuery dataset 
        threads: 1
