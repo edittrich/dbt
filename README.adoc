@@ -37,7 +37,7 @@ https://docs.getdbt.com/docs/supported-databases/profile-bigquery/#required-perm
        method: service-account
        keyfile: ~/.ssh/edittrich-dbt@dev1-onb-playground-18fd.json # Replace with the full path to the keyfile
        project: dev1-onb-playground-18fd # Replace with the GCP project id
-       dataset: dbt_spike # Replace with the BigQuery dataset 
+       dataset: edittrich_dbt # Replace with the BigQuery dataset 
        threads: 1
        timeout_seconds: 300
        location: europe-west3
